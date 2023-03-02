@@ -1,5 +1,39 @@
 <script setup lang="ts">
 
+
+let faq1: boolean = false
+const number1: number = 1
+let faq2: boolean = false
+const number2: number = 2
+let faq3: boolean = false
+const number3: number = 3
+let faq4: boolean = false
+const number4: number = 4
+let faq5: boolean = false
+const number5: number = 5
+let faq6: boolean = false
+const number6: number = 6
+let faq7: boolean = false
+const number7: number = 7
+let faq8: boolean = false
+const number8: number = 8
+
+function addOrRemove (faq: boolean, number: number){
+
+    const answer = document.querySelector(`#answer${number}`)
+    const question = document.querySelector(`#question${number}`)
+
+    if (faq1 == false){
+        question.classList.add('is-open-question')
+        answer.classList.add('is-open-answer')
+        return faq1 = true
+    }else{
+        question.classList.remove('is-open-question')
+        answer.classList.remove('is-open-answer')
+        return faq1 = false
+    }
+}
+
 </script>
 
 <template>
@@ -152,69 +186,69 @@
             <div class="container">
                 <h2 class="fw-bold">Perguntas Frequentes</h2>
                 <ul class="faq-questions">
-                    <li class="faq-questions-item">
-                        <div class="question is-open-question">
+                    <li @click="addOrRemove(faq1, number1)" class="faq-questions-item">
+                        <div class="question" id="question1">
                             Quanto tempo em média duram as lentes de contato?
                         </div>
-                        <div class="answer is-open-answer">
+                        <div class="answer" id="answer1">
                             Com os devidos cuidados, higiene correta e realizando as manutenções, a duração é de cerca de 15 a 20 anos.
                         </div>
                     </li>
-                    <li class="faq-questions-item">
-                        <div class="question">
+                    <li @click="addOrRemove(faq2, number2)" class="faq-questions-item">
+                        <div class="question" id="question2">
                             As lentes de contato ficam amareladas com o tempo tomando bebidas com corantes?
                         </div>
-                        <div class="answer">
+                        <div class="answer" id="answer2">
                             Não, as lentes de contato tem uma superfície muito selada devido ao processo de cristalização no forno, que
                             vai a uma temperatura de mais de 800. Portanto, as lentes não sofrem alteração com o passar do tempo.
                         </div>
                     </li>
-                    <li class="faq-questions-item">
-                        <div class="question">
+                    <li @click="addOrRemove(faq3, number3)" class="faq-questions-item">
+                        <div class="question" id="question3">
                             É necessária a manutenção das lentes?
                         </div>
-                        <div class="answer">
+                        <div class="answer" id="answer3">
                             Sim, assim como os dentes naturais, com as lentes são necessárias uma ou duas visitas ao ano para realizar uma
                             limpeza e verificar se está tudo bem.
                         </div>
                     </li>
-                    <li class="faq-questions-item">
-                        <div class="question">
+                    <li @click="addOrRemove(faq4, number4)" class="faq-questions-item">
+                        <div class="question" id="question4">
                             Os dentes são desgastados para colocar as lentes?
                         </div>
-                        <div class="answer">
+                        <div class="answer" id="answer4">
                             Sim, os dentes são desgastados em 99% dos casos, porém somente o mínimo necessário. Desgastes minimamente invasivos.
                         </div>
                     </li>
-                    <li class="faq-questions-item">
-                        <div class="question">
+                    <li @click="addOrRemove(faq5, number5)" class="faq-questions-item">
+                        <div class="question" id="question5">
                             Vocês colocam aparelho?
                         </div>
-                        <div class="answer">
+                        <div class="answer" id="answer5">
                             Sim, a clínica também realiza o trabalho ortodôntico.
                         </div>
                     </li>
-                    <li class="faq-questions-item">
-                        <div class="question">
+                    <li @click="addOrRemove(faq6, number6)" class="faq-questions-item">
+                        <div class="question" id="question6">
                             O valor é de todo o sorriso ou por lente?
                         </div>
-                        <div class="answer">
+                        <div class="answer" id="answer6">
                             O valor é calculado por lentes.
                         </div>
                     </li>
-                    <li class="faq-questions-item">
-                        <div class="question">
+                    <li @click="addOrRemove(faq7, number7)" class="faq-questions-item">
+                        <div class="question" id="question7">
                             Vocês colocam implantes?
                         </div>
-                        <div class="answer">
+                        <div class="answer" id="answer7">
                             Sim, na clínica colocamos implantes, coroas, lentes de contato, ponte fixa e além disso trabalhamos com a parte ortodôntica.
                         </div>
                     </li>
-                    <li class="faq-questions-item">
-                        <div class="question">
+                    <li @click="addOrRemove(faq8, number8)" class="faq-questions-item">
+                        <div class="question" id="question8">
                             É necessário colocar aparelho antes de por as lentes?
                         </div>
-                        <div class="answer">
+                        <div class="answer" id="answer8">
                             Em alguns casos é sim preciso, sendo muito de cada caso a depender de como os dentes possam estar posicionados, acaba sendo
                             necessária a parte ortodôntica antes das lentes de contato.
                         </div>
@@ -359,6 +393,9 @@ footer{
     margin: 0 auto;
 }
 
+.faq-questions{
+    padding: 0;
+}
 .faq-questions-item{
     background-color: #2B4257;
     list-style: none;
