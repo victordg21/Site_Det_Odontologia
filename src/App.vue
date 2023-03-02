@@ -497,6 +497,14 @@ footer p{
         width: 95%;
     }
 
+    .question{
+        font-size: 18px;
+        padding-right: 40px;
+    }
+    .question::after{
+        right: 12px;
+    }
+
 }
 
 @media (min-width: 768px) and (max-width: 1023px){
@@ -524,6 +532,10 @@ footer p{
 
     .casos-vermais{
         width: 95%;
+    }
+
+    .question{
+        padding-right: 80px;
     }
 }
 
