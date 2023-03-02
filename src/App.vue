@@ -1,6 +1,5 @@
 <script setup lang="ts">
 
-
 let faq1: boolean = false
 const number1: number = 1
 let faq2: boolean = false
@@ -18,17 +17,21 @@ const number7: number = 7
 let faq8: boolean = false
 const number8: number = 8
 
-function addOrRemove (faq: boolean, number: number){
 
+function addOrRemove (faq: boolean, number: number){
     const answer = document.querySelector(`#answer${number}`)
     const question = document.querySelector(`#question${number}`)
 
     if (faq1 == false){
+        //@ts-ignore
         question.classList.add('is-open-question')
+        //@ts-ignore
         answer.classList.add('is-open-answer')
         return faq1 = true
     }else{
+        //@ts-ignore
         question.classList.remove('is-open-question')
+        //@ts-ignore
         answer.classList.remove('is-open-answer')
         return faq1 = false
     }
